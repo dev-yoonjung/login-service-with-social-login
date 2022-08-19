@@ -19,11 +19,10 @@ public class User extends BaseEntity {
     @Column(name = "user_id")
     private Long id;
 
+    @Column(unique = true)
     private String email;
 
     private String password;
-
-    private String profileImageUrl;
 
     @Enumerated(EnumType.STRING)
     private UserRole role;
@@ -34,5 +33,16 @@ public class User extends BaseEntity {
     private String socialId;
 
     private String refreshToken;
+
+    public static User createUser(User user) {
+        return User.builder()
+                .email(user.getEmail())
+                .password(user.getPassword())
+                .role(user.getRole())
+                .socialType(user.getSocialType())
+                .socialId(user.getSocialId())
+                .refreshToken(user.getRefreshToken())
+                .build();
+    }
 
 }
