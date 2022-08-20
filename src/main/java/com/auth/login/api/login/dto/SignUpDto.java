@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
 
 public class SignUpDto {
@@ -56,7 +57,7 @@ public class SignUpDto {
                     .role(user.getRole())
                     .socialType(user.getSocialType())
                     .createTime(
-                            user.getCreateTime().toInstant(ZoneOffset.UTC)
+                            user.getCreateTime().toInstant(ZoneOffset.of("Asia/Seoul"))
                     )
                     .build();
         }
