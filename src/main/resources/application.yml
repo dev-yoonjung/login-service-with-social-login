@@ -10,3 +10,9 @@ spring:
       settings:
         web-allow-others: true
       path: /h2-console
+token:
+  secret: abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789
+  access:
+    expiration_time: 900000 # 15분
+  refresh:
+    expiration_time: 1210500000 # 2주

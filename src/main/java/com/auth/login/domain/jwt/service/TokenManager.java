@@ -11,8 +11,8 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +20,6 @@ import java.security.Key;
 import java.util.Date;
 
 @Service
-@Getter
 @Slf4j
 public class TokenManager {
 
@@ -32,6 +31,7 @@ public class TokenManager {
     @Value("${token.refresh.expiration_time}")
     private  Long refreshTokenExpirationTime;
 
+    @Autowired
     public TokenManager(@Value("${token.secret}") String secret) {
         byte[] bytes = Decoders.BASE64.decode(secret);
         this.key = Keys.hmacShaKeyFor(bytes);
