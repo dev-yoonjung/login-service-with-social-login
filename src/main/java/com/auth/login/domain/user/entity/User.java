@@ -34,6 +34,10 @@ public class User extends BaseEntity {
 
     private String refreshToken;
 
+    public void updateRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
     public static User createUser(User user) {
         return User.builder()
                 .email(user.getEmail())

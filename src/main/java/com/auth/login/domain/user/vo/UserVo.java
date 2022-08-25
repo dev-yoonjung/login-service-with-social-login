@@ -1,5 +1,6 @@
 package com.auth.login.domain.user.vo;
 
+import com.auth.login.domain.user.constants.UserRole;
 import com.auth.login.domain.user.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,8 +18,12 @@ public class UserVo implements UserDetails {
         authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
     }
 
+    public User getUser() {
+        return this.user;
+    }
+
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+    public Set<GrantedAuthority> getAuthorities() {
         return authorities;
     }
 
