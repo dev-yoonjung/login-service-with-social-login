@@ -17,6 +17,7 @@ spring:
           google:
             client-id:
             client-secret:
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
           naver:
             client-id:
             client-secret:
@@ -31,6 +32,7 @@ spring:
             authorization-grant-type: authorization_code
             scope: profile_nickname, profile_image
             client-name: kakao
+            redirect-uri: http://localhost:8080/login/oauth2/code/kakao
         provider:
           naver:
             authorization_uri: https://nid.naver.com/oauth2.0/authorize
@@ -48,7 +50,3 @@ token:
     expiration_time: 900000 # 15분
   refresh:
     expiration_time: 1210500000 # 2주
-spring:
-  security:
-    oauth2:
-      client:

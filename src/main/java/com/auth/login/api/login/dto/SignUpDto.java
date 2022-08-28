@@ -10,7 +10,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
-import java.time.ZoneId;
 import java.time.ZoneOffset;
 
 public class SignUpDto {
