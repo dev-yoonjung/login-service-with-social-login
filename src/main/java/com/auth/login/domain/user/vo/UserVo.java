@@ -15,7 +15,7 @@ public class UserVo implements UserDetails {
 
     public UserVo(User user) {
         this.user = user;
-        authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
+        authorities.add(new SimpleGrantedAuthority(user.getRole().getKey()));
     }
 
     public User getUser() {

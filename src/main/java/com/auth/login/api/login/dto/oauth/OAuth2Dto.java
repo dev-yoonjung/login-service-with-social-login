@@ -39,11 +39,11 @@ public class OAuth2Dto {
         };
     }
 
-    public User toEntity(SocialType socialType, OAuth2UserInfoDto userInfo) {
+    public User toEntity(SocialType socialType) {
         return User.builder()
                 .socialType(socialType)
-                .socialId(userInfo.getId())
-                .email(userInfo.getEmail())
+                .socialId(user.getId())
+                .email(user.getEmail())
                 .role(UserRole.GUEST)
                 .build();
     }
